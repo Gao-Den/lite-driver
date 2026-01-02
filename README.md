@@ -5,7 +5,7 @@ A lightweight and portable peripheral library framework designed for embedded sy
 ## Overview
 
 <p align="center">
-  <img src="images/lite-driver.png" alt="lite-driver" width="500">
+  <img src="images/lite-driver.png" alt="lite-driver" width="1000">
 </p>
 
 This repository provides a collection of peripheral libraries implemented in **pure C**, following **hardware abstraction** and **object-oriented design principles**.  
