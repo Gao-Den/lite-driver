@@ -15,7 +15,7 @@ void pca9555_init(pca9555_t* pca9555, uint8_t device_addr, pf_i2c_write_byte pf_
     pca9555->reg_output_port1 = 0x00;
 }
 
-void pca9555_set_dir(pca9555_t* pca9555, pca9556_port_t port, uint8_t dir) {
+void pca9555_set_dir(pca9555_t* pca9555, pca9555_port_t port, uint8_t dir) {
     switch (port) {
     case PCA9555_PORT_0: {
         pca9555->pf_write_byte(pca9555->device_addr, PCA9555_DIRECTION_0, dir);
@@ -33,7 +33,7 @@ void pca9555_set_dir(pca9555_t* pca9555, pca9556_port_t port, uint8_t dir) {
     }
 }
 
-void pca9555_set_output(pca9555_t* pca9555, pca9556_port_t port, uint8_t value) {
+void pca9555_set_output(pca9555_t* pca9555, pca9555_port_t port, uint8_t value) {
     switch (port) {
     case PCA9555_PORT_0: {
         pca9555->reg_output_port0 = value;
@@ -53,7 +53,7 @@ void pca9555_set_output(pca9555_t* pca9555, pca9556_port_t port, uint8_t value) 
     }
 }
 
-void pca9555_set_output_pin(pca9555_t* pca9555, pca9556_port_t port, pca9556_pin_t pin, bool level) {
+void pca9555_set_output_pin(pca9555_t* pca9555, pca9555_port_t port, pca9555_pin_t pin, bool level) {
     switch (port) {
     case PCA9555_PORT_0: {
         if (level) {
@@ -83,7 +83,7 @@ void pca9555_set_output_pin(pca9555_t* pca9555, pca9556_port_t port, pca9556_pin
     }
 }
 
-void pca9555_set_polarity(pca9555_t* pca9555, pca9556_port_t port, uint8_t polarity) {
+void pca9555_set_polarity(pca9555_t* pca9555, pca9555_port_t port, uint8_t polarity) {
     switch (port) {
     case PCA9555_PORT_0: {
         pca9555->pf_write_byte(pca9555->device_addr, PCA9555_POLARITY_INV_0, polarity);
@@ -101,7 +101,7 @@ void pca9555_set_polarity(pca9555_t* pca9555, pca9556_port_t port, uint8_t polar
     }
 }
 
-uint8_t pca9555_get_input(pca9555_t* pca9555, pca9556_port_t port) {
+uint8_t pca9555_get_input(pca9555_t* pca9555, pca9555_port_t port) {
     uint8_t input_value = 0x00;
     switch (port) {
     case PCA9555_PORT_0: {
